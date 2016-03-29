@@ -1,0 +1,9 @@
+- name: Install software
+  package: name={{ item }} state=latest
+  with_items:
+    - weechat
+    - nmap
+    - tcpdump
+    - youtube-dl
+    - wget
+

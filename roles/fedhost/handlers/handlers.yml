@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: greyman
+  become: yes
+  become_method: sudo
+  handlers:
+      - name: reload firewalld
+        command: firewall-cmd reload
+      - name: restart firewalld
+        service: name=firewalld state:started

@@ -1,0 +1,20 @@
+- name: Install docker
+  dnf: name={{ item }} state=latest
+  with_items:
+    - docker
+    - docker-selinux
+    - docker-vim
+    - docker-utils
+    - cockpit-docker
+    - python3-docker-py
+    - python3-docker-scripts
+    - python3-sen
+
+- name: Create the docker group
+  group: name=docker
+
+- name: Add user to the docker group
+  user: name="greyman" groups="docker" append=yes
+
+- name: Enable and start the docker service
+  service: name=docker enabled=yes state=started

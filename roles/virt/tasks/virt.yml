@@ -1,0 +1,19 @@
+---
+- hosts: all
+  remote_user: greyman
+  become: yes
+  become_method: sudo
+
+  tasks:
+  - name: install fedora virtualization group
+    command: dnf group install with-optional virtualization
+
+- name: Add user to the docker group
+  user: name="greyman" groups={{ item }} append=yes
+  with_items:
+    - kvm
+    - qemu
+
+- name: Enable and start the docker service
+  service: name=libvirtd enabled=yes state=started
+

@@ -1,0 +1,13 @@
+# greyman workstation 
+---
+
+- hosts: kallichore
+  remote_user: greyman
+  become: yes
+  become_method: sudo
+  roles:
+    - fedhost
+    - media
+    - net
+    - virt
+

@@ -1,0 +1,21 @@
+- name: Install software
+  dnf: pkg={{ item }} state=installed
+  with_items:
+    - gimp
+    - inkscape
+    - ImageMagick
+    - audacity
+    - vlc
+    - flac
+    - shntool
+    - cuetools
+    - mpd
+    
+
+- name: Install codecs
+  dnf: pkg={{ item }} state=present
+  with_items:
+    - gstreamer-plugins-ugly
+    - gstreamer-plugins-bad
+    - gstreamer-ffmpeg
+

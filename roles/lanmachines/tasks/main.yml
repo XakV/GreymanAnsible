@@ -1,0 +1,13 @@
+---
+  tasks:
+  - name: enable firewalld and add lan sources
+    firewalld: source='192.168.1.0/24' zone=home state=enabled permanent=true
+  - name: add external sources for webservers
+    firewalld: source='107.161.28.100' zone=trusted permanent=true enabled=true
+    firewalld: source='159.203.30.49' zone=trusted permanent=true enabled=true
+  - name: open ssh ports
+    firewalld: service=ssh permanent=true zone=home enabled=true
+    firewalld: service=ssh permanent=true zone=trusted enabled=true
+
+  handlers:
+    - include: handlers/handlers.yml 

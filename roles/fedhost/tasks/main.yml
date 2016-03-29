@@ -1,0 +1,24 @@
+- name: Install Development Tools
+  dnf: name="@Development Tools" state=latest
+
+- name: Install Development-related tools
+  dnf: name={{ item }} state=latest
+  with_items:
+    - ruby-devel
+    - rubygems-devel
+    - golang
+    - golang-bin
+    - go-compilers-golang-compiler
+    - libffi-devel
+    - libxml2-devel
+    - python3-devel
+    - pypy3-devel
+    - python-queuelib
+    - python-w3lib
+    - python3-pip
+    - python3-requests
+
+- file: path=/home/greyman/Code state=directory
+  sudo: false
+
+- include: repos.yml  # Add Repos
