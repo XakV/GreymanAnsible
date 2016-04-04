@@ -1,0 +1,19 @@
+- name: Link dotfiles
+  file: >-
+    src={{ item }}
+    dest=/home/{{ user }}/.{{ item | basename }}
+    mode=0600
+    state=link
+  with_fileglob:
+    - ./bash/*
+    - ./spectrwm/*
+    - ./vim/*
+    - ./xresources/*
+    - ./ksh/*
+    - ./mutt/*
+    - ./bspwm/*
+    - ./sxhkd/*
+    - ./tmux/*
+    - ./weechat/*
+ 
+

@@ -1,0 +1,9 @@
+- name: Link dotfiles
+  file: >-
+    src={{ item }}
+    dest=/home/{{ user }}/.{{ item | basename }}
+    mode=0600
+    state=link
+  with_fileglob:
+    - ./SpVmBshXrs/*
+

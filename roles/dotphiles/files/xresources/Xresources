@@ -1,0 +1,109 @@
+! This is the global resources file that is loaded when
+! all users log in, as well as for the login screen
+
+! Fix the Xft dpi to 96; this prevents tiny fonts
+! or HUGE fonts depending on the screen size.
+Xft.dpi: 96
+
+! hintstyle: medium means that
+! position the stems for maximum constrast and consistency
+! but do not force the stems to integral widths. hintnone,
+! hintslight, and hintfull are the other possibilities.
+Xft.hintstyle: hintmedium
+Xft.hinting: true
+
+! Xresources file
+
+URxvt*inheritPixmap: true
+URxvt*.transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*.shading: 80
+
+! urxvt -geometry 80X3 -name 'termrun' -e sh -c "/ein/bash -i -t"
+
+*.VT100.geometry:         80x25
+*.font:           xft:terminus-Regular:size=11
+**dynamicColors:      true
+*utf8:               2
+*eightBitInput:      true
+*saveLines:          10000
+*scrollKey:          true
+*scrollTtyOutput:    false
+*scrollBar:          false
+*rightScrollBar:          false
+*jumpScroll:      false
+*multiScroll:     false
+*colorBDMode:     false
+URxvt.letterspace:	-3
+
+
+
+! terminal colors ------------------------------------------------------------
+
+! --- ~/.Xresources ------------------------------------------------------------
+! ! ------------------------------------------------------------------------------
+! ! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ! ------------------------------------------------------------------------------
+! ! --- http://ciembor.github.com/4bit -------------------------------------------
+! ! ------------------------------------------------------------------------------
+!
+! ! --- special colors ---
+!
+*background: #0d1926
+*foreground: #d9e6f2
+!
+! ! --- standard colors ---
+!
+! ! black
+*color0: #0c0c0c
+!
+! ! bright_black
+*color8: #343434
+!
+! ! red
+*color1: #ef7e42
+!
+! ! bright_red
+*color9: #f6ba9a
+!
+! ! green
+*color2: #42ef7e
+!
+! ! bright_green
+*color10: #9af6ba
+!
+! ! yellow
+*color3: #b2ef42
+!
+! ! bright_yellow
+*color11: #d6f69a
+!
+! ! blue
+*color4: #7e42ef
+!
+! ! bright_blue
+*color12: #ba9af6
+!
+! ! magenta
+*color5: #ef42b2
+!
+! ! bright_magenta
+*color13: #f69ad6
+!
+! ! cyan
+*color6: #42b2ef
+!
+! ! bright_cyan
+*color14: #9ad6f6
+!
+! ! white
+*color7: #a9a9a9
+!
+! ! bright_white
+*color15: #ffffff
+!
+!
+! ! ------------------------------------------------------------------------------
+! ! --- end of terminal colors section -------------------------------------------
+! ! ------------------------------------------------------------------------------
+
