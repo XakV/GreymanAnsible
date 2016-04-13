@@ -1,0 +1,8 @@
+---
+- hosts: all
+  remote_user: greyman
+  become: yes
+  become_method: sudo
+  handlers:
+      - name: reload journald
+        command: systemctl restart systemd-journald

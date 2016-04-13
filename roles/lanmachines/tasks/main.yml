@@ -1,5 +1,7 @@
 ---
   tasks:
+  - name: install latest firewalld
+    package: name=firewalld state=latest
   - name: enable firewalld and add lan sources
     firewalld: source='192.168.1.0/24' zone=home state=enabled permanent=true
   - name: add external sources for webservers
@@ -11,3 +13,9 @@
 
   handlers:
     - include: handlers/handlers.yml 
+
+  tasks:
+  - copy: src=files/journald.conf dest=/etc/systemd/journald.conf backup=yes
+
+  handlers:
+    - include: handlers/journal.yml
